@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 
 class GetView extends Controller
 {
-public function LoadView(){
-    return view('users');
-}
+public function LoadView($ages){
+    if($ages<20){
+        $ages=20;
+        
+    }
+    return view('users',['name'=>'Muheto Hodal','ages'=>$ages]);
+ }
 }

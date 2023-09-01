@@ -27,10 +27,11 @@ Route::get('/home/{name}', function ($name) {
 // Route::get('/about_us', function (){
 //     return view('about_us');
 // });
-Route::view('about_us','about_us');//this is the short way of routing in lalavel
-Route::view('nice','nice');
+Route::view('about','about');//this is the short way of routing in lalavel
+Route::view('home','home');
+Route::view('gallery','gallery');
 // Route::get('users',[Users::class, 'getNewMessage']);
 Route::get('all_names/{userNumber}',[AllNames::class,'getAllNames']);
 
 Route::get('short_details',[ShortDetails::class,'getShortDetails("Muheto Hodal","mhthodol@gmail.com",40)']);
-Route::get('users',[GetView::class,'LoadView']);
+Route::get('users/{ages}',[GetView::class,'LoadView']);
