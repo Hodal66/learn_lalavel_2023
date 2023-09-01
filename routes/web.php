@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
+use App\Http\Controllers\AboutMe;
+use App\Http\Controllers\AllNames;
+use App\Http\Controllers\ShortDetails;
+use App\Http\Controllers\GetView;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +29,8 @@ Route::get('/home/{name}', function ($name) {
 // });
 Route::view('about_us','about_us');//this is the short way of routing in lalavel
 Route::view('nice','nice');
-Route::get('users',[Users::class, 'getNewMessage']);
+// Route::get('users',[Users::class, 'getNewMessage']);
+Route::get('all_names/{userNumber}',[AllNames::class,'getAllNames']);
+
+Route::get('short_details',[ShortDetails::class,'getShortDetails("Muheto Hodal","mhthodol@gmail.com",40)']);
+Route::get('users',[GetView::class,'LoadView']);
